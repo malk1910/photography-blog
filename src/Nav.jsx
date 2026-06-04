@@ -39,17 +39,17 @@ export default function Nav() {
               {/* ------List------ */}
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto px-5 py-2">
                 <li className="nav-item ">
-                  <Link to="Home" className="nav-link">
+                  <Link to="/Home" className="nav-link">
                     الرئيسية
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="Blog" className="nav-link">
+                  <Link to="/Blog" className="nav-link">
                     المدونة
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="About" className="nav-link">
+                  <Link to="/About" className="nav-link">
                     من نحن
                   </Link>
                 </li>

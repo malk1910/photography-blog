@@ -9,6 +9,42 @@ body {
   --border-color: rgba(38, 38, 38);
   --text-color: rgba(134, 134, 134);
 }
+/* .main-page {
+  background-image: linear-gradient(#26262680 1px, #0000 1px),
+    linear-gradient(90deg, #26262680 1px, #0000 1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  background-size: 70px 70px;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(254, 93, 0, 0.09) 0%,
+    transparent 70%
+  );
+} */
+/* .main-page h1 {
+  font-size: 80px;
+  font-weight: bolder;
+  margin-bottom: 40px;
+}
+.main-page p {
+  color: var(--text-color);
+  font-size: 25px;
+  max-width: 700px;
+  margin: 20px auto;
+} */
+
 /* Navbar style */
 .container-fluid {
   background-color: rgba(22, 22, 22);
@@ -562,4 +598,173 @@ body {
     flex-wrap: wrap;
   }
 }
+/* The blog page */
 
+.blog .blog-text{
+  margin-top: -200px;
+
+}
+.blog h1{
+  font-weight: bolder;
+  font-size: 70px;
+}
+.blog p{
+  color:var(--text-color);
+}
+
+.cat-blog{
+  background: black;
+  border-top: 1px solid var(--border-color);
+  margin-top: -300px;
+  border-bottom: 1px solid var(--border-color);
+
+
+}
+.search-cat{
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 50px;
+   
+}
+.search-cat .form-control{
+  width: 25%;
+  z-index: 9999;
+}
+@media(max-width:768px){
+  .search-cat .form-control{
+    width: 100%;
+  }
+  .cat-tabs{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+}
+.search-cat input{
+  background-color: var(--main-color);
+  border:1px solid var(--border-color);
+}
+.search-cat input::placeholder{
+  color:var(--text-color);
+}
+.cat-tabs button{
+  background-color: var(--main-color);
+  color:var(--text-color);
+  border:1px solid var(--border-color);
+  border-radius:8px;
+  padding:8px 15px;
+  cursor: pointer;
+  z-index: 999;
+}
+.cat-tabs button:hover{
+  border:1px solid var(--sub-color) !important;
+ 
+ 
+}
+.cat-tabs button:focus{
+  background-color: var(--sub-color) !important;
+  color:white;
+}
+.blog .pagination .page-link{
+  background-color: var(--main-color);
+  color:var(--text-color);
+  border:1px solid var(--border-color);
+  border-radius: 10px;
+}
+.blog .pagination .page-link:hover{
+  border:1px solid var(--sub-color);
+}
+.blog .pagination .page-link:focus{
+  background-color: var(--sub-color);
+}
+
+.list-view .card {
+  background-color: var(--main-color);
+  border-radius: 50px;
+  flex-direction: row !important;
+  display: flex !important;
+}
+.list-view  .card .card-img-top {
+  /* height: 450px; */
+  object-fit: cover;
+  border-radius: 0 50px 50px 0;
+  width:30%;
+}
+
+.list-view .badge,
+.grid-view .badge {
+  background-color: rgba(230, 92, 32, 0.15);
+  border: 1px solid var(--sub-color);
+  color: var(--sub-color);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: smaller;
+  font-weight: bold;
+}
+/* .list-view  .text-muted-custom {
+  color: var(--text-color);
+  font-size: smaller;
+} */
+.list-view  .card-text {
+  color: var(--text-color);
+}
+.list-view .author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+.list-view .author small{
+  color:var(--text-color);
+}
+.list-view  .card:hover,
+.list-view  .card .card-img-top:hover {
+  border: 1px solid var(--sub-color);
+  transition: 0.5s;
+}
+.list-view  .card-title {
+  color: white;
+}
+.list-view  .card:hover .card-title {
+  color: var(--sub-color);
+  transition: 0.5s;
+}
+/* .list-view  .text-body-secondary {
+  margin-top: 100px;
+} */
+
+/* .list-view .card {
+  flex-direction: row !important;
+  display: flex !important;
+  align-items: center;
+}
+
+.list-view .card-img-top {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.list-view .card-body {
+  flex: 1;
+}
+
+.list-view .card-footer {
+  border-top: none;
+} */
+
+.view-buttons button {
+  background: var(--main-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  z-index: 9999;
+}
+
+.view-buttons .active-view {
+  background: var(--sub-color);
+  color: white;
+}

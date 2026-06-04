@@ -11,7 +11,7 @@ import data from "./data/data.json";
 export default function Home() {
   return (
     <>
-      <section className="home">
+      <section className="main-page home">
         <div className="glow"></div>
         <div className="container lh-lg">
           <h1>
