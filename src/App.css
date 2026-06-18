@@ -33,3 +33,57 @@ body {
     transparent 70%
   );
 }
+
+.header-article {
+  height: 1000px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 70px;
+  padding: 40px;
+}
+.header-article .top-bar-art {
+  background: rgba(22, 22, 22, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+font-size: small;
+}
+
+.top-bar-art i{
+    color:white;
+}
+.top-bar-art a {
+    text-decoration: none;
+    color: white; 
+  }
+  
+  .top-bar-art a:hover {
+    opacity: 0.8;
+  }
+  .top-bar-art a:last-child:visited{
+    color:var(--sub-color);
+  }
+
+ .article .badge-category-art{
+    background-color: var(--sub-color);
+    border: 1px solid var(--sub-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: smaller;
+    font-weight: bold;
+  }
+  
+  .article .header-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 200px;
+  }

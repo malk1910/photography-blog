@@ -2,7 +2,10 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Home";
 import Blog from "./Blog";
-import About from "./About";
+// import About from "./About";
+// import Article from "./Article";
+import NotFound from "./NotFound";
+
 
 const router = createHashRouter([
   {
@@ -12,10 +15,11 @@ const router = createHashRouter([
       { path: "", element: <Home /> },
       { path: "Home", element: <Home /> },
       { path: "Blog", element: <Blog /> },
-      { path: "About", element: <About /> },
+      // { path: "About", element: <About /> },
+      // {path: "article/:id", element: <Article /> },
       {
         path: "*",
-        element: <h1>404 Not Found</h1>,
+        element: <NotFound />,
       },
     ],
   },

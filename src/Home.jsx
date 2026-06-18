@@ -231,7 +231,7 @@ export default function Home() {
 
           <div className="row row-cols-1 row-cols-md-4 g-4">
             <div className="col">
-              <Link to="/Lighting" className="card ">
+              <Link to="/Blog" state={{ category: "إضاءة" }} className="card ">
                 <i className="fa-solid fa-sun"></i>
                 <div className="card-body">
                   <h5 className="card-title">اضاءة</h5>
@@ -240,7 +240,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="col">
-              <Link to="/Portrait" className="card">
+              <Link to="/Blog" state={{ category: "بورتريه" }} className="card">
                 <i className="fa-solid fa-user"></i>
                 <div className="card-body">
                   <h5 className="card-title">بورتريه</h5>
@@ -249,7 +249,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="col">
-              <Link to="/Landscapes" className="card">
+              <Link to="/Blog" state={{ category: "مناظر طبيعية" }} className="card">
                 <i className="fa-solid fa-mountain-sun"></i>
                 <div className="card-body">
                   <h5 className="card-title">مناظر طبيعية</h5>
@@ -258,7 +258,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="col">
-              <Link to="/Tech" className="card">
+              <Link to="/Blog" state={{ category: "تقنيات" }} className="card">
                 <i className="fa-solid fa-sliders"></i>
                 <div className="card-body">
                   <h5 className="card-title">تقنيات</h5>
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
 
             <div className="col">
-              <Link to="/Tools" className="card">
+              <Link to="/Blog" state={{ category: "معدات" }} className="card">
                 <i className="fa-solid fa-camera-retro"></i>
                 <div className="card-body">
                   <h5 className="card-title">معدات</h5>

@@ -214,13 +214,24 @@ body {
 .home .btn {
   color: white;
   padding: 12px 20px;
+  z-index: 9999;
 }
 .home .blog-btn {
   background-color: var(--sub-color);
 }
+.home .blog-btn:hover,
+.home .blog-btn:active{
+  background-color: transparent;
+  border:1px solid var(--sub-color);
+}
 .home .about-btn {
   background-color: transparent;
   border-color: var(--border-color);
+}
+.home .about-btn:hover,
+.home .about-btn:active{
+  background-color: rgba(254, 93, 0,0.2);
+  border:1px solid var(--sub-color);
 }
 @media (max-width: 768px) {
   .home h1 {

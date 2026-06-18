@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import data from "./data/data.json";
 
 export default function Blog() {
-    const [Category, setCategory] = useState("الكل");
-const [searchItem, setSearchItem] = useState("");
-    const filteredPosts = data.posts.filter((post) => {
-        const matchCategory =
-          Category === "الكل" || post.category === Category;
-      
-        const matchSearch =
-          post.title.includes(searchItem) ||
-          post.excerpt.includes(searchItem);
-      
-        return matchCategory && matchSearch;
-      });
+  const location = useLocation();
+
+  const [Category, setCategory] = useState(location.state?.category || "الكل");
+  const [searchItem, setSearchItem] = useState("");
+
+  const filteredPosts = data.posts.filter((post) => {
+    const matchCategory = Category === "الكل" || post.category === Category;
+
+    const matchSearch =
+      post.title.includes(searchItem) || post.excerpt.includes(searchItem);
+
+    return matchCategory && matchSearch;
+  });
   //   The Pagination
   const [page, setPage] = useState(1);
   const currentPosts = filteredPosts.slice((page - 1) * 6, page * 6);
@@ -35,7 +37,6 @@ const [searchItem, setSearchItem] = useState("");
 
   //   The buttons of view of cards
   const [view, setView] = useState("grid");
-
 
   return (
     <>
@@ -94,14 +95,14 @@ const [searchItem, setSearchItem] = useState("");
             <div className="view-buttons d-flex gap-2 justify-content-end">
               <button
                 onClick={() => setView("grid")}
-                className={view === "grid"  ? "active-view" : ""}
+                className={view === "grid" ? "active-view" : ""}
               >
                 <i className="fa-solid fa-table-cells"></i>
               </button>
 
               <button
                 onClick={() => setView("list")}
-                className={view === "list"  ? "active-view" : ""}
+                className={view === "list" ? "active-view" : ""}
               >
                 <i className="fa-solid fa-list"></i>
               </button>
@@ -116,7 +117,10 @@ const [searchItem, setSearchItem] = useState("");
             >
               {currentPosts.map((post) => (
                 <div className={view === "grid" ? "col" : "mb-4"} key={post.id}>
-                  <div className="card h-100 ">
+                  <Link
+                    to={`/article/${post.id}`}
+                    className="card h-100 text-decoration-none"
+                  >
                     <img
                       src={post.image}
                       className="card-img-top"
@@ -124,35 +128,35 @@ const [searchItem, setSearchItem] = useState("");
                     />
 
                     <div className="card-body lh-lg p-4">
-                      <span className="badge  mb-3">
-                        {post.category}
-                      </span>
+                      <span className="badge  mb-3">{post.category}</span>
 
                       <h5 className="card-title">{post.title}</h5>
 
                       <p className="card-text">{post.excerpt}</p>
-                 
-                    <div className="card-footer py-3 d-flex justify-content-between align-items-center">
-                      <div className="author d-flex align-items-center">
-                        <img
-                          src={post.author.avatar}
-                          alt={post.author.name}
-                          width="45"
-                          height="45"
-                          className="rounded-circle mx-3"
-                        />
 
-                        <div>
-                          <strong className="text-white">{post.author.name}</strong>
-                          <br />
-                          <small>{post.author.role}</small>
+                      <div className="card-footer py-3 d-flex justify-content-between align-items-center">
+                        <div className="author d-flex align-items-center">
+                          <img
+                            src={post.author.avatar}
+                            alt={post.author.name}
+                            width="45"
+                            height="45"
+                            className="rounded-circle mx-3"
+                          />
+
+                          <div>
+                            <strong className="text-white">
+                              {post.author.name}
+                            </strong>
+                            <br />
+                            <small>{post.author.role}</small>
+                          </div>
                         </div>
-                      </div>
 
-                      <i className="fa-solid fa-chevron-left g-5"></i>
+                        <i className="fa-solid fa-chevron-left g-5"></i>
+                      </div>
                     </div>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>
